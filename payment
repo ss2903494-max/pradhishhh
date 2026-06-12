@@ -1,0 +1,39 @@
+public class payment{
+    static class Payment {
+        String amount;
+
+        void transfer() {
+            System.out.println("payment successfull");
+        }
+
+        static class cardpayment extends Payment {
+            @Override
+            void transfer() {
+                System.out.println("card payment succesfull");
+            }
+        }
+
+        static class Netbanking extends Payment {
+            @Override
+            void transfer() {
+                System.out.println("netbanking successfully done");
+            }
+        }
+
+        static class Upipayment extends Payment {
+            @Override
+            void transfer() {
+                System.out.println("upipayment is successfully done");
+            }
+        }
+    }
+        static void main() {
+            Payment.cardpayment cardpayment = new Payment.cardpayment();
+            cardpayment.transfer();
+            Payment.Netbanking netbanking = new Payment.Netbanking();
+            netbanking.transfer();
+            Payment.Upipayment upipayment = new Payment.Upipayment();
+            upipayment.transfer();
+
+        }
+    }
