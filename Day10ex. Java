@@ -1,0 +1,53 @@
+import java.util.LinkedList;
+
+class Student {
+    String name;
+    int regNo, marks;
+
+    Student(String name, int regNo, int marks) {
+        this.name = name;
+        this.regNo = regNo;
+        this.marks = marks;
+    }
+
+    public String toString() {
+        return name + " " + regNo + " " + marks;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        LinkedList<Student> students = new LinkedList<>();
+
+        // Add 5 students
+        students.add(new Student("Ram", 101, 80));
+        students.add(new Student("Shyam", 102, 75));
+        students.add(new Student("Aman", 103, 90));
+        students.add(new Student("Riya", 104, 85));
+        students.add(new Student("Neha", 105, 88));
+
+        // Display
+        System.out.println("Students:");
+        for (Student s : students)
+            System.out.println(s);
+
+        // Update 1 student
+        students.get(0).marks = 95;
+
+        // Remove 1 student
+        students.remove(1);
+
+        // Search student
+        int searchRegNo = 103;
+        for (Student s : students) {
+            if (s.regNo == searchRegNo) {
+                System.out.println("\nFound: " + s);
+            }
+        }
+
+        System.out.println("\nAfter Operations:");
+        for (Student s : students)
+            System.out.println(s);
+    }
+}
