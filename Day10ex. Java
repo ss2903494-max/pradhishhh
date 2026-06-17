@@ -1,53 +1,39 @@
 import java.util.LinkedList;
 
-class Student {
-    String name;
-    int regNo, marks;
+public class day10 {
 
-    Student(String name, int regNo, int marks) {
-        this.name = name;
-        this.regNo = regNo;
-        this.marks = marks;
+    static void process(LinkedList<String> list) {
+        System.out.println("Removed : " + list.removeFirst());
     }
 
-    public String toString() {
-        return name + " " + regNo + " " + marks;
-    }
-}
-
-public class Main {
     public static void main(String[] args) {
 
-        LinkedList<Student> students = new LinkedList<>();
+        LinkedList<String> list = new LinkedList<>();
 
-        // Add 5 students
-        students.add(new Student("Ram", 101, 80));
-        students.add(new Student("Shyam", 102, 75));
-        students.add(new Student("Aman", 103, 90));
-        students.add(new Student("Riya", 104, 85));
-        students.add(new Student("Neha", 105, 88));
 
-        // Display
-        System.out.println("Students:");
-        for (Student s : students)
-            System.out.println(s);
+        list.add("101 - Madhu - 85");
+        list.add("102 - Sutha - 78");
+        list.add("103 - cokerey - 90");
+        list.add("104 - supriya - 88");
+        list.add("105 - raj - 75");
 
-        // Update 1 student
-        students.get(0).marks = 95;
+        System.out.println("Student List:");
+        System.out.println(list);
 
-        // Remove 1 student
-        students.remove(1);
+        list.add("106 - Pradhish - 92");
+        System.out.println("\nAfter Adding:");
+        System.out.println(list);
 
-        // Search student
-        int searchRegNo = 103;
-        for (Student s : students) {
-            if (s.regNo == searchRegNo) {
-                System.out.println("\nFound: " + s);
-            }
-        }
 
-        System.out.println("\nAfter Operations:");
-        for (Student s : students)
-            System.out.println(s);
+        process(list);
+
+        System.out.println("\nAfter Removing:");
+        System.out.println(list);
+
+        // Update one student
+        list.set(2, "104 - Rajavel - 95");
+
+        System.out.println("\nAfter Updating:");
+        System.out.println(list);
     }
 }
